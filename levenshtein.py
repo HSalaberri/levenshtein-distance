@@ -44,8 +44,11 @@ def main(args: List[str]):
         if lev.distance(hund_name.lower(), args.name.lower()) == args.distance:
             selected_names.append(hund_name)
 
+    # Get uniques
+    unique_names = list(set(selected_names))
+
     log.info(f"Names to Levenshtein dist. {args.distance} from {args.name}:")
-    log.info(selected_names)
+    log.info(unique_names)
 
 
 def parse_args() -> List[Any]:
